@@ -37,8 +37,8 @@ gantt._eventable = function (obj) {
             return this[name].apply(this, arg0);
         return true;
     };
-
-
-    }
-  
+    
+    obj.checkEvent = function (name) {
+        return (!!this['ev_' + name.toLowerCase()]);
+    };
 }
