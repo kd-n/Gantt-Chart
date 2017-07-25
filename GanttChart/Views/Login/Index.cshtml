@@ -3,4 +3,27 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+<style>
+    .log-td {
+        margin: 10px;
+    }
+
+    input.btn.btn-sm.btn-td {
+        margin-left: 83px;
+    }
+</style>
+
+<p></p>
+<table cellpadding="5" cellspacing="5">
+    <tr>
+        <td>@Html.DisplayName("Username: ")</td>
+        <td><input type="text" class="log-td"/></td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayName("Password: ")</td>
+        <td><input type="password" class="log-td"/></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="button" value="Login" class="btn btn-sm btn-td"/></td>
+    </tr>
+</table>
