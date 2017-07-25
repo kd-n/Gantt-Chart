@@ -17,6 +17,15 @@
     <link rel="stylesheet" href="../common/third-party/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <script src="../common/third-party/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     @*Gantt Chart END*@
+
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -73,7 +82,16 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well">
+                        <div>
+                            <a class="logo" title="Fujitsu Engineering Technologies Philippines, Inc." href="http://fetp.ph" target="_blank">&copy; Fujitsu Engineering Technologies Philippines, Inc.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*<p>&copy; @DateTime.Now.Year - FETP</p>*@
         </footer>
     </div>
 
