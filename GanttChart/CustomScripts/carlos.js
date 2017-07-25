@@ -17,5 +17,28 @@ gantt.eventRemove = function (el, event, handler) {
 }
 
 gantt._eventable = function (obj) {
-    obj.silent_mode = false;
+    obj._silent_mode = false;
+    obj._silentStart = function () {
+        this.silent_mode = true;
+    };
+    obj.attachEvent = function (name, catcher, callObj) {
+        name = 'ev_' + name.toLowerCase();
+        if (!this[name])
+            this[name] = new this._eventCatcher(callObj || this);
+
+        return (name + ':' + this[name].addEvent(catcher));
+        
+    };
+
+    obj.callEvent = function (name, arg0) {
+        if (this._silent_mode) return true;
+        name = 'ev_' + name.toLowerCase();
+        if (this[name])
+            return this[name].apply(this, arg0);
+        return true;
+    };
+    
+    obj.checkEvent = function (name) {
+        return (!!this['ev_' + name.toLowerCase()]);
+    };
 }
