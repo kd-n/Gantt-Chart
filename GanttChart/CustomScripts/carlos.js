@@ -41,4 +41,18 @@ gantt._eventable = function (obj) {
     obj.checkEvent = function (name) {
         return (!!this['ev_' + name.toLowerCase()]);
     };
+
+    obj._eventCatcher = function (obj) {
+        var dhx_catch = [];
+        var z = function () {
+            var res = true;
+            for (var i = 0; i < dhx_catch.length; i++) {
+                if (dhx_catch[i]) {
+                    var zr = dhx_catch[i].apply(obj, arguments);
+                    res = res && zr;
+                }
+            }
+            return res;
+        };
+
 }
