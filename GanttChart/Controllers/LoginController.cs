@@ -18,5 +18,26 @@ namespace GanttChart.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Validate()
+        {
+            string user = Request.Form["username"];
+            string pass = Request.Form["password"];
+
+            if((user == "admin") && (pass == "admin"))
+            {
+                Session["LoggedIn"] = 1;
+                Session["Username"] = user;
+            }
+            return Redirect("/Dashboard/Index");
+        }
+
+        public ActionResult Logout()
+        {
+            Session["LoggedIn"] = null;
+            Session["Username"] = "User";
+            return View("Index");
+        }
     }
 }
