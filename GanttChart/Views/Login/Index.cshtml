@@ -8,24 +8,33 @@
         margin: 10px;
     }
 
-    input.btn.btn-sm.btn-td {
-        margin-left: 83px;
+    input.btn.btn-default.btn-td {
+        float: right;
+    }
+
+    .center {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
     }
 </style>
 
 <p></p>
-<div class="container body-content">
+<div class="container body-content center">
     <table>
         <tr>
-            <td>@Html.DisplayName("Username: ")</td>
-            <td><input type="text" class="log-td" /></td>
+            <td><label class="col-md-2 control-label">Username: </label></td>
+            <td><input type="text" class="log-td form-control" /></td>
         </tr>
         <tr>
-            <td>@Html.DisplayName("Password: ")</td>
-            <td><input type="password" class="log-td" /></td>
+            <td><label class="col-md-2 control-label">Password: </label></td>
+            <td><input type="password" class="log-td form-control" /></td>
         </tr>
         <tr>
-            <td colspan="2"><input type="button" value="Login" class="btn btn-sm btn-td" /></td>
+            <td colspan="2"><input type="button" value="Login" class="btn btn-default btn-td" /></td>
         </tr>
     </table>
+    <div>
+        <p>@Html.ActionLink("Register as a new user", "Register", "Login")</p>
+    </div>
 </div>
