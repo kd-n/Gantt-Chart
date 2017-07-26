@@ -78,17 +78,21 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-</body>
-<footer class="footer_linea container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well">
-                <div>
-                    <a class="logo" title="Fujitsu Engineering Technologies Philippines, Inc." href="http://fetp.ph" target="_blank">&copy; @DateTime.Now.Year - Fujitsu Engineering Technologies Philippines, Inc.</a>
-                </div>
+    <div class="container">
+        <footer class="footer well"  style="position:absolute;bottom:0;width:inherit">
+            <div style="text-align:center" >
+                <!--    <div class="col-md-12">
+                    <div class="well">
+                          <div> -->
+                <a class="logo" title="Fujitsu Engineering Technologies Philippines, Inc." href="http://fetp.ph" target="_blank">&copy; @DateTime.Now.Year - Fujitsu Engineering Technologies Philippines, Inc.</a>
             </div>
-        </div>
+            <!--</div>
+                </div>
+            </div>-->
+            @*<p>&copy; @DateTime.Now.Year - FETP</p>*@
+        </footer>
     </div>
-    @*<p>&copy; @DateTime.Now.Year - FETP</p>*@
-</footer>
+
+</body>
+
 </html>
