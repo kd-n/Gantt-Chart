@@ -150,6 +150,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="codebase\connector\base_connector.php" />
     <Content Include="codebase\connector\chart_connector.php" />
     <Content Include="codebase\connector\combo_connector.php" />
@@ -545,7 +549,6 @@
     <Content Include="Views\Login\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
