@@ -2,20 +2,6 @@
     ViewBag.Title = "Dashboard";
 }
 
-@* Kailangan neto dto para gumana yung sa mga dropdown. Ayaw nyang andun lang sa _Layout.cshtml. Gawan nalang paraan matanggal dito. *@
-<script src="~/codebase/dhtmlxgantt.js"></script>
-<link href="~/codebase/dhtmlxgantt.css" rel="stylesheet" />
-@*<script src="../codebase/locale/locale_jp.js" charset="utf-8"></script>*@
-
-@*bootstrap statr*@
-<script src="~/common/third-party/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
-<link rel="stylesheet" href="../common/third-party/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="../common/third-party/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-<script src="../common/third-party/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-@*bootstrap end*@
-
-@* Thanks :)))) *@
-
 <p></p>
 <div class="row">
     <div class="col-md-2 col-md-push-10 col-sm-2 col-sm-push-10">
@@ -105,7 +91,7 @@
         var getListItemHTML = function (type, count, active) {
             return '<li' + (active ? ' class="active"' : '') + '><a href="#">' + type + 's <span class="badge">' + count + '</span></a></li>';
         };
-
+     
         var updateInfo = function () {
             var state = gantt.getState(),
                 tasks = gantt.getTaskByTime(state.min_date, state.max_date),
@@ -154,7 +140,7 @@
             }
             return "";
         };
-
+        
         gantt.config.columns = [
             { name: "text", label: "Task name", width: "*", tree: true },
             {
@@ -326,4 +312,8 @@
         gantt.init("gantt_here");
         gantt.parse(demo_tasks);
         updateInfo();
+        
+       
     </script>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
