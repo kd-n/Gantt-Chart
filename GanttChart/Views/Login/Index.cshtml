@@ -3,6 +3,17 @@
     ViewBag.Title = "Login";
 }
 
+@*Gantt Chart START*@
+<script src="~/codebase/dhtmlxgantt.js"></script>
+<link href="~/codebase/dhtmlxgantt.css" rel="stylesheet" />
+
+<script src="~/common/third-party/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+<link rel="stylesheet" href="../common/third-party/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="../common/third-party/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script src="../common/third-party/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+@*Gantt Chart END*@
+
 <style>
     .log-td {
         margin: 10px;
@@ -13,31 +24,30 @@
     }
 
     .center {
-        margin: 0 25% 0 25%;
-        padding-top: 100px;
+        margin: auto;
+        width: 50%;
+        padding: 10px;
     }
 </style>
 
 <p></p>
-<div class="container body-content">
-    <div class="center">
-        <div style="margin:0 25% 0 25%">
-            <table>
-                <tr>
-                    <td><label class="control-label">Username: </label></td>
-                    <td><input type="text" class="log-td form-control" /></td>
-                </tr>
-                <tr>
-                    <td><label class="control-label">Password: </label></td>
-                    <td><input type="password" class="log-td form-control" /></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="button" value="Login" class="btn btn-default btn-td" /></td>
-                </tr>
-            </table>
-            <div>
-                <p>@Html.ActionLink("Register as a new user", "Register", "Login")</p>
-            </div>
-        </div>
+<div class="container body-content center">
+    <form action="/Login/Validate" method="post">
+        <table>
+            <tr>
+                <td><label class="col-md-2 control-label">Username: </label></td>
+                <td><input type="text" class="log-td form-control" name="username" /></td>
+            </tr>
+            <tr>
+                <td><label class="col-md-2 control-label">Password: </label></td>
+                <td><input type="password" class="log-td form-control" name="password" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Login" class="btn btn-default btn-td" /></td>
+            </tr>
+        </table>
+    </form>   
+    <div>
+        <p>@Html.ActionLink("Register as a new user", "Register", "Login")</p>
     </div>
 </div>
