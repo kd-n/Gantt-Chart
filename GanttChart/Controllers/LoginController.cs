@@ -21,7 +21,6 @@ namespace GanttChart.Controllers
             return View();
         }
         
-
         [HttpPost]
         public ActionResult Validate()
         {
