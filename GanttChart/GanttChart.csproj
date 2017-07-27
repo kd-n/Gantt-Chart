@@ -153,9 +153,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
+    <Content Include="App_Data\gantt_db.mdf" />
+    <Content Include="App_Data\gantt_db_log.ldf">
+      <DependentUpon>gantt_db.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\sample.mdf" />
     <Content Include="App_Data\sample_log.ldf">
