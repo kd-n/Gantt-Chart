@@ -2,18 +2,6 @@
 @{
     ViewBag.Title = "Login";
 }
-
-@*Gantt Chart START*@
-<script src="~/codebase/dhtmlxgantt.js"></script>
-<link href="~/codebase/dhtmlxgantt.css" rel="stylesheet" />
-
-<script src="~/common/third-party/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
-
-<link rel="stylesheet" href="../common/third-party/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="../common/third-party/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-<script src="../common/third-party/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-@*Gantt Chart END*@
-
 <style>
     .log-td {
         margin: 10px;
@@ -51,3 +39,5 @@
         <p>@Html.ActionLink("Register as a new user", "Register", "Login")</p>
     </div>
 </div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
