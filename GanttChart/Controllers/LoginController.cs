@@ -11,11 +11,13 @@ namespace GanttChart.Controllers
         // GET: Login
         public ActionResult Index()
         {
+            Session["LoggedIn"] = null;
             return View();
         }
 
         public ActionResult Register()
         {
+            Session["LoggedIn"] = 2;
             return View();
         }
 
@@ -29,8 +31,14 @@ namespace GanttChart.Controllers
             {
                 Session["LoggedIn"] = 1;
                 Session["Username"] = user;
+
+                return Redirect("/Dashboard/Index");
             }
-            return Redirect("/Dashboard/Index");
+            else
+            {
+                return Redirect("/Login/Index");
+            }
+            
         }
 
         public ActionResult Logout()

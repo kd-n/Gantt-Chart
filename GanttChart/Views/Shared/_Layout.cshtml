@@ -56,7 +56,15 @@
                     @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                 </ul>
                 <ul class="nav navbar-nav" style="float:right;">
-                    @if (Session["LoggedIn"] != null)
+                    @if (Session["LoggedIn"] == null)
+                    {
+                        <li>@Html.ActionLink("Register", "Register", "Login")</li>
+                    }
+                    else if (Convert.ToInt32(Session["LoggedIn"]) == 2)
+                    {
+                        <li>@Html.ActionLink("Login", "Index", "Login")</li>
+                    }
+                    else if (Convert.ToInt32(Session["LoggedIn"]) == 1)
                     {
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Session["Username"] <span class="caret"></span></a>
@@ -68,10 +76,27 @@
                             </ul>
                         </li>
                     }
+
+                    @*@if (Session["LoggedIn"] != null)
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Session["Username"] <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="#">Settings</a></li>
+                                <li class="divider"></li>
+                                <li>@Html.ActionLink("Logout", "Logout", "Login")</li>
+                            </ul>
+                        </li>
+                    }
+                    else if (Convert.ToInt32(Session["LoggedIn"]) == 2)
+                    {
+                        <li>@Html.ActionLink("Login", "Index", "Login")</li>
+                    }
                     else
                     {
                         <li>@Html.ActionLink("Register", "Register", "Login")</li>
-                    }
+                    }*@
                 </ul>
             </div>
         </div>
