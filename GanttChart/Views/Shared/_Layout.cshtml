@@ -90,9 +90,7 @@
 
 
     </div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+ 
     <div class="container">
         <footer class="footer well"  style="position:absolute;bottom:0;width:inherit;">
             <div style="text-align:center" >
@@ -101,5 +99,7 @@
         </footer>
     </div>
 </body>
-
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
 </html>

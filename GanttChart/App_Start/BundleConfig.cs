@@ -25,13 +25,19 @@ namespace GanttChart
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/dhtmlxgantt/dhtmlxgantt_skyblue.css"
+                      ));
 
             //Gantt Chart Scripts and Style
-            bundles.Add(new StyleBundle("~/bundles/gantt").Include(
-                "~/codebase/dhtmlxgantt.css"));
+            //Gantt Chart Style
+            bundles.Add(new StyleBundle("~/bundles/ganttcss").Include(
+                "~/Content/dhtmlxgantt/dhtmlxgantt_skyblue.css"));
 
-            //
+
+            //Gantt Chart Script
+            bundles.Add(new StyleBundle("~/bundles/ganttjs").Include(
+                "~/Scripts/dhtmlxgantt.js"));
         }
     }
 }
