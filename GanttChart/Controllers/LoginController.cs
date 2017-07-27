@@ -20,6 +20,7 @@ namespace GanttChart.Controllers
             Session["LoggedIn"] = 2;
             return View();
         }
+        
 
         [HttpPost]
         public ActionResult Validate()
